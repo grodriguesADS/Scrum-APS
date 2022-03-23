@@ -1,6 +1,6 @@
 package util;
 
-public class placa {
+public class Placa {
 	private String modeloPlaca;
 
 	public String getModeloPlaca() {
