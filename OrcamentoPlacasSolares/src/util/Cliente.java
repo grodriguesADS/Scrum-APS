@@ -5,29 +5,29 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Cliente {
 	private static AtomicLong idCounter = new AtomicLong();
 	private long idCliente;
-	private String nome;
-	private String email;
-	private int numero;
+	private String nomeCliente;
+	private String emailCliente;
+	private int numeroCliente;
 	
 	
 	public Cliente (String nome, String email, int numero) {
 		 setId(idCounter.getAndIncrement());
-		 this.nome = nome;
-		 this.email = email;
-		 this.numero = numero; 
+		 this.nomeCliente = nome;
+		 this.emailCliente = email;
+		 this.numeroCliente = numero; 
 	}
 	
-	public String getNome() { return nome; }
+	public String getNome() { return nomeCliente; }
 	
-	public void setNome(String nome) { this.nome = nome; } 
+	public void setNome(String nome) { this.nomeCliente = nome; } 
 	
-	public String getEmail() { return email; }
+	public String getEmail() { return emailCliente; }
 	
-	public void setEmail(String email) { this.email = email; }
+	public void setEmail(String email) { this.emailCliente = email; }
 	
-	public int getNumero() { return numero; }
+	public int getNumero() { return numeroCliente; }
 	
-	public void setNumero(int numero) { this.numero = numero; }
+	public void setNumero(int numero) { this.numeroCliente = numero; }
 	
 	public static AtomicLong getIdCounter() { return idCounter; }
 	
