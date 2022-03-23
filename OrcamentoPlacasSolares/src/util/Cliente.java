@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicLong;
 
 public class Cliente {
 	private static AtomicLong idCounter = new AtomicLong();
-	private long id;
+	private long idCliente;
 	private String nome;
 	private String email;
 	private int numero;
@@ -33,8 +33,9 @@ public class Cliente {
 	
 	public static void setIdCounter(AtomicLong idCounter) { Cliente.idCounter = idCounter; }
 	
-	public long getId() { return id; }
+	public long getId() { return idCliente; }
 	
-	public void setId(long id) { this.id = id; }
+	public void setId(long id) { this.idCliente = id; }
+	
 	
 }
