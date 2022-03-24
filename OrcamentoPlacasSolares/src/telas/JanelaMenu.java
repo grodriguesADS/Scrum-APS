@@ -46,7 +46,7 @@ public class JanelaMenu extends JanelaPadrao {
 		add(geradorDeRelatorioa);
 		
 		/*
-		JButton adicionarColaboradoraServico = new JButton("Associar Colaborador a Serviï¿½o");
+		JButton adicionarColaboradoraServico = new JButton("Associar Colaborador a Serviço");
 		adicionarColaboradoraServico.setBounds(60, 260 , z , w);
 		adicionarColaboradoraServico.addMouseListener(new ouvinteBotoes(adicionarColaboradoraServico));
 		adicionarColaboradoraServico.addActionListener(new ouvinteDoBtAdicionarServico(this));

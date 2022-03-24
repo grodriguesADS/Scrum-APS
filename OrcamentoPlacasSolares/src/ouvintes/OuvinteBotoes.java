@@ -7,10 +7,10 @@ import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-public class ouvinteBotoes implements MouseListener {
+public class OuvinteBotoes implements MouseListener {
 	private JButton botao;
 	
-	public ouvinteBotoes(JButton botao) {
+	public OuvinteBotoes(JButton botao) {
 		this.botao = botao;
 		botao.setBackground(new Color(255,192,203));
 	}

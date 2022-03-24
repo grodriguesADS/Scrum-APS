@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import ouvintes.ouvinteBotoes;
+import ouvintes.OuvinteBotoes;
 
 
 
@@ -105,7 +105,7 @@ public class JanelaPlaca extends JanelaPadrao {
 	        botao.setToolTipText("Clique Para Confirmar");
 	     //   ouvinteBtCadastraCliente ouvinteCliente = new ouvinteBtCadastraCliente (this);
 	     //   botao.addActionListener(ouvinteCliente);
-	        botao.addMouseListener(new ouvinteBotoes(botao));
+	        botao.addMouseListener(new OuvinteBotoes(botao));
 	        add(botao);
 }
 }
