@@ -13,12 +13,16 @@ import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 
+import ouvintes.OuvinteBtVoltar;
+
+
+
 
 
 
 
 @SuppressWarnings("serial")
-public class janelaPadrao extends JFrame {
+public class JanelaPadrao extends JFrame {
 	
 
 	private JMenuBar barraDeMenu; 
@@ -32,10 +36,10 @@ public class janelaPadrao extends JFrame {
 		this.voltar = voltar;
 	}
 
-	public janelaPadrao(String titulo) {
-		Color fundo = new Color(238,130,238);		
+	public JanelaPadrao(String titulo) {
+		Color fundo = new Color(20, 92, 255);		
 
-			getContentPane().setBackground(Color.red);
+			getContentPane().setBackground(fundo);
 			setTitle(titulo);
 			setSize(1000,600);
 			setLocationRelativeTo(null);
@@ -83,19 +87,19 @@ public class janelaPadrao extends JFrame {
 			itemSair.addActionListener(ouvinteMenuBar);			
 			menuOpcoes.add(itemSair);
 			
-			
-			if(!(this instanceof janelaMenu)) {
-				ImageIcon img = new ImageIcon("img/icons8-seta-esquerda.png");
-				JButton voltar = new JButton();
-				voltar.setBounds(10,10,50,50);
-				voltar.setOpaque(false);
-				voltar.setContentAreaFilled(false);
+			*/
+			if(!(this instanceof JanelaMenu)) {
 				
-				voltar.addActionListener(new ouvinteBtVoltar(this));
+				JButton voltar = new JButton();	
+				
+				voltar.setBounds(10,10,80,25);
+				voltar.setBackground(Color.white);
+				
+				voltar.addActionListener(new OuvinteBtVoltar(this));
 				add(voltar);
 			}
 			
-			*/
+			
 }
 	
 }
