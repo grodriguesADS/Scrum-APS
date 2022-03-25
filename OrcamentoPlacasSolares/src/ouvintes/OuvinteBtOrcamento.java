@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import telas.JanelaRelatorio;
+import telas.JanelaSimulacao;
 import telas.Orcamento;
 
 
@@ -27,10 +27,10 @@ public class OuvinteBtOrcamento implements ActionListener  {
     public void actionPerformed(ActionEvent e) {
     	String regiao = janela.getRegiao().getSelectedItem().toString();
     	String consumo = janela.getConsumoDoCliente().getText();
-    	String potencia = janela.getPotencia();
-      System.out.println(potencia);
+    	String potencia = janela.getPotencia().getSelectedItem().toString();
+     
       janela.dispose();
-      new JanelaRelatorio(regiao, consumo, potencia);      
+      new JanelaSimulacao(regiao, consumo, potencia);      
 
 }
 }

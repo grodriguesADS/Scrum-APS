@@ -8,18 +8,18 @@ import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
 import ouvintes.OuvinteBtOrcamento;
-import ouvintes.OuvinteBotoes;
+
 
 
 public class Orcamento extends JanelaPadrao {
 	
-	 private JTextField PotenciaDaPlaca;
+	 private JComboBox PotenciaDaPlaca;
 	 private JTextField ConsumoDoCliente;
 	 private JComboBox Regiao;
 	 
 
-	public String getPotencia() {
-		return PotenciaDaPlaca.getText();
+	public JComboBox getPotencia() {
+		return PotenciaDaPlaca;
 	}
 	
 	public JTextField getConsumoDoCliente() {
@@ -33,11 +33,14 @@ public class Orcamento extends JanelaPadrao {
 		public Orcamento() {
 	      super("Orcamento");
 	        adicionarLabel();
-	        adicionarTextField();
 	        adicionarLabel2();
+	       
+	      
 	        adicionarComboBox();
 	        
 	        adicionarComboBox2();
+	        
+	        adicionarTextField2();
 	      
 	        adicionarLabel4();
 	       
@@ -58,25 +61,27 @@ public class Orcamento extends JanelaPadrao {
 	        
 	        add(texto);
 	    }
-	    public void adicionarTextField () {
-	    	PotenciaDaPlaca = new JTextField();	        
-	        
-	    	PotenciaDaPlaca.setBounds(380, 130, 250, 44);
-	    	PotenciaDaPlaca.setEnabled(true);
+	    public void adicionarComboBox() {
+	        String[] opcoes = {"Canadian Solar(340 W)", "Yingli Solar(310 W)", 
+	        		"Trina Solar(335 W)", "Globo Brasil(320 W)"};
+	        PotenciaDaPlaca = new JComboBox<String>(opcoes);
+	       
+	        PotenciaDaPlaca.setBounds(380, 130, 200, 44);
 	        
 	        add(PotenciaDaPlaca);
 	    }
 	    
-	    public void adicionarLabel2() {
-	        JLabel texto = new JLabel("Regiao:");
+	    public void adicionarLabel2 () {
+	        JLabel texto = new JLabel("Regiao: ");
 	        
-	        texto.setBounds(380, 180, 140, 44);
+	        texto.setBounds(380, 190, 140, 44);
 	        texto.setForeground(Color.black);
 	        
 	        add(texto);
 	    }
-	    public void adicionarComboBox() {
-	        String[] opcoes = {"Nordeste", "Sul", "Suldeste"};
+
+	    public void adicionarComboBox2() {
+	        String[] opcoes = {"Nordeste", "Sul", "Suldeste", "Centro-Oeste", "Norte"};
 	        Regiao = new JComboBox<String>(opcoes);
 	       
 	        Regiao.setBounds(380, 220, 140, 44);
@@ -85,7 +90,7 @@ public class Orcamento extends JanelaPadrao {
 	    }
 
 	    public void adicionarLabel4 () {
-	        JLabel texto = new JLabel("Consumo do Cliente (kwh): ");
+	        JLabel texto = new JLabel("Consumo do Cliente (kwh Mês): ");
 	        
 	        texto.setBounds(380, 260, 230, 60);
 	        texto.setForeground(Color.black);
@@ -93,7 +98,7 @@ public class Orcamento extends JanelaPadrao {
 	        add(texto);
 
 	    }
-	    private void adicionarComboBox2() {
+	    private void adicionarTextField2() {
 	    	ConsumoDoCliente = new JTextField();       
 
 	    	ConsumoDoCliente.setBounds(380, 300, 250, 44);
@@ -104,9 +109,9 @@ public class Orcamento extends JanelaPadrao {
 	    }
 	    public void adicionarBotao () {
 	        
-	        JButton botao = new JButton("Relatorio");
+	        JButton botao = new JButton("Simular");
 	       
-	        botao.setBounds(450, 400, 90, 44);
+	        botao.setBounds(450, 400, 150, 44);
 	        botao.setToolTipText("Clique Para Confirmar");
 	        OuvinteBtOrcamento ouvinteOrcamento = new OuvinteBtOrcamento (this);
 	        botao.addActionListener(ouvinteOrcamento);

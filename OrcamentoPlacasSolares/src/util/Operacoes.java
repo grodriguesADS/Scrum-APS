@@ -3,11 +3,36 @@ import java.text.DecimalFormat;
 
 public class Operacoes {
 	
+	private String EnergiarGeradaPorDia;
+
+	private String EnergiarGeradaPorMes;
+	
+	private String QuantidadeDePaines;
+	
+	
+	public String getEnergiarGeradaPorDia() {
+		return EnergiarGeradaPorDia;
+	}
+
+
+
+	public String getEnergiarGeradaPorMes() {
+		return EnergiarGeradaPorMes;
+	}
+
+
+
+	public String getQuantidadeDePaines() {
+		return QuantidadeDePaines;
+	}
+
+
+	
 	/**
-	 * Função que determina quantas placas solares é necessaria para o
+	 * Funï¿½ï¿½o que determina quantas placas solares ï¿½ necessaria para o
 	 * consumo de energia que a residencia precisa.
 	 * 
-	 * Irradiação por região: 
+	 * Irradiaï¿½ï¿½o por regiï¿½o: 
 	 *   Nordeste	5,9
 	 *   Centro-Oeste	5,7
 	 *   Sudeste	5,6
@@ -18,9 +43,10 @@ public class Operacoes {
 	 * @return quantidade de paineis
 	 */
 	public Operacoes(String potencia, String regiao, String consumo) {
-		int potenciaPainel = Integer.parseInt(potencia);
+		int potenciaPainel = 0;
 		float irradiacaoSolar = 0;
 		int consumoMensal = Integer.parseInt(consumo);
+		
 		switch (regiao.toUpperCase()) {
 		case "NORDESTE":
 			irradiacaoSolar = 5.9f;
@@ -36,17 +62,32 @@ public class Operacoes {
 			break;
 		case "SUL":
 			irradiacaoSolar = 5.0f;
-			break;
+			break;		
+		}
 		
+		switch (potencia.toUpperCase()) {
+		case "Canadian Solar(340 W)":
+			irradiacaoSolar = 340;
+			break;
+		case "Yingli Solar(310 W)":
+			irradiacaoSolar = 310;
+			break;
+		case "Trina Solar(335 W)":
+			irradiacaoSolar = 335;
+			break;
+		case "Globo Brasil(320 W)":
+			irradiacaoSolar = 320;
+			break;
+	
 		}
 
 		float energiaGerada = (int) (potenciaPainel*irradiacaoSolar*(1 - 0.20)); 
 		float qtdPaineis = consumoMensal/(energiaGerada *30);
 		DecimalFormat df = new DecimalFormat();
 		DecimalFormat dfP = new DecimalFormat("0");
-		System.out.println("Energia gerada por dia: " + df.format(energiaGerada) + " kWh/dia");
-		System.out.println("Energia gerada por mes: " + df.format(energiaGerada * 30) + " kWh/mes");
-		System.out.println("Quantidade de paineis: " + dfP.format(qtdPaineis * 1000));
-		
+		EnergiarGeradaPorDia = ("Energia gerada por dia: " + df.format(energiaGerada) + " kWh/dia");
+		EnergiarGeradaPorMes = ("Energia gerada por mes: " + df.format(energiaGerada * 30) + " kWh/mes");
+		QuantidadeDePaines = ("Quantidade de paineis: " + dfP.format(qtdPaineis * 1000));
+		System.out.println(energiaGerada);
 	}
 }
