@@ -29,10 +29,10 @@ public class Operacoes {
 
 	
 	/**
-	 * Fun��o que determina quantas placas solares � necessaria para o
+	 * Funcao que determina quantas placas solares sao necessaria para o
 	 * consumo de energia que a residencia precisa.
 	 * 
-	 * Irradia��o por regi�o: 
+	 * Irradiacao por regiao: 
 	 *   Nordeste	5,9
 	 *   Centro-Oeste	5,7
 	 *   Sudeste	5,6
@@ -65,18 +65,18 @@ public class Operacoes {
 			break;		
 		}
 		
-		switch (potencia.toUpperCase()) {
+		switch (potencia) {
 		case "Canadian Solar(340 W)":
-			irradiacaoSolar = 340;
+			potenciaPainel = 340;
 			break;
 		case "Yingli Solar(310 W)":
-			irradiacaoSolar = 310;
+			potenciaPainel = 310;
 			break;
 		case "Trina Solar(335 W)":
-			irradiacaoSolar = 335;
+			potenciaPainel = 335;
 			break;
 		case "Globo Brasil(320 W)":
-			irradiacaoSolar = 320;
+			potenciaPainel = 320;
 			break;
 	
 		}
@@ -88,6 +88,5 @@ public class Operacoes {
 		EnergiarGeradaPorDia = ("Energia gerada por dia: " + df.format(energiaGerada) + " kWh/dia");
 		EnergiarGeradaPorMes = ("Energia gerada por mes: " + df.format(energiaGerada * 30) + " kWh/mes");
 		QuantidadeDePaines = ("Quantidade de paineis: " + dfP.format(qtdPaineis * 1000));
-		System.out.println(energiaGerada);
 	}
 }
