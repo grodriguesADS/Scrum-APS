@@ -81,7 +81,7 @@ public class Orcamento extends JanelaPadrao {
 	    }
 
 	    public void adicionarComboBox2() {
-	        String[] opcoes = {"Nordeste", "Sul", "Suldeste", "Centro-Oeste", "Norte"};
+	        String[] opcoes = {"Nordeste", "Sul", "Sudeste", "Centro-Oeste", "Norte"};
 	        Regiao = new JComboBox<String>(opcoes);
 	       
 	        Regiao.setBounds(380, 220, 140, 44);

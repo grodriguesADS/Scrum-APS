@@ -1,6 +1,6 @@
 package util;
 
-import java.text.DecimalFormat;
+
 
 import javax.swing.SwingUtilities;
 
@@ -13,7 +13,7 @@ public class MainTeste {
 
 			@Override
 			public void run() {
-				JanelaPadrao t = new JanelaMenu();
+				JanelaPadrao menu = new JanelaMenu();
 				
 			}
 		
